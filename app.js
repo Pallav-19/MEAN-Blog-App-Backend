@@ -37,12 +37,6 @@ app.use("/", express.static(path.join(__dirname, "angular")));
 // ----------------------------- BOUNDARY ---------------------------------//
 app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
-app.get("/login", (req, res) => {
-  res.redirect("/");
-});
-app.get("/signin", (req, res) => {
-  res.redirect("/");
-});
 
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "angular", "index.html"));
