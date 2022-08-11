@@ -23,8 +23,6 @@ creds.js
 
 # Private Files
 nodemon.json
-package.json
-package-lock.json
 
 *.csv
 *.csv.gz
