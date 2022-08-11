@@ -37,6 +37,9 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 // ----------------------------- BOUNDARY ---------------------------------//
 app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
+app.get("/", (req, res) => {
+  res.send("Welcome to techlog API");
+});
 // app.use((req, res, next) => {
 //   res.sendFile(path.join(__dirname, "angular", "index.html"));
 //   next();
