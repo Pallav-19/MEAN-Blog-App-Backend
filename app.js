@@ -9,8 +9,7 @@ const path = require("path");
 const Cors = require("cors");
 
 const app = express();
-// app.use(Cors());
-app.use(CORS_Middleware);
+
 mongoose
   .connect(
     "mongodb+srv://mean-app:" +
@@ -33,6 +32,7 @@ app.use(
   })
 );
 
+app.use(CORS_Middleware);
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 // app.use("/", express.static(path.join(__dirname, "angular")));
 // ----------------------------- BOUNDARY ---------------------------------//
