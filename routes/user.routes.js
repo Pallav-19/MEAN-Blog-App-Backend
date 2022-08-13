@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const { signup, login } = require("../controllers/user/index.js");
-
-router.post("/signup", signup);
-router.post("/login", login);
-
+const CORS_Middleware = require("../middlewares/cross-origin-resource-sharing");
+router.post("/signup", CORS_Middleware, signup);
+router.post("/login", CORS_Middleware, login);
 
 module.exports = router;
