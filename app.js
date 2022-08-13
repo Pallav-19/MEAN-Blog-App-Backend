@@ -9,7 +9,7 @@ const path = require("path");
 const Cors = require("cors");
 
 const app = express();
-app.use(Cors());
+// app.use(Cors());
 app.use(CORS_Middleware);
 mongoose
   .connect(
