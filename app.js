@@ -31,7 +31,7 @@ app.use(
   })
 );
 
-app.use(CORS_Middleware);
+app.use(CORS_Middleware());
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 // app.use("/", express.static(path.join(__dirname, "angular")));
 // ----------------------------- BOUNDARY ---------------------------------//
