@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const postRoutes = require("./routes/posts.routes.js");
 const userRoutes = require("./routes/user.routes.js");
@@ -34,7 +33,7 @@ app.use(
 
 app.use(CORS_Middleware);
 app.use("/images", express.static(path.join(__dirname, "public/images")));
-// app.use("/", express.static(path.join(__dirname, "angular")));
+app.use("/", express.static(path.join(__dirname, "angular")));
 // ----------------------------- BOUNDARY ---------------------------------//
 app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
@@ -45,8 +44,8 @@ app.get("/signin", (req, res) => {
   res.redirect("/");
 });
 
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, "angular", "index.html"));
-//   next();
-// });
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "angular", "index.html"));
+  next();
+});
 module.exports = app;
